@@ -11,6 +11,15 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Source/PluginsModules/MyMediaPlayer.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/PluginsModules/MyMediaPlayer.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/PluginsModules/MyUserWidget.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/PluginsModules/MyUserWidget.h" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectId" id="2GG80nCu9D8aqXKuhgzJqDaPctI" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -148,7 +157,9 @@
       <option name="presentableId" value="Default" />
       <updated>1666003340872</updated>
       <workItem from="1666003349616" duration="49000" />
-      <workItem from="1666004856425" duration="599000" />
+      <workItem from="1666004856425" duration="15772000" />
+      <workItem from="1666047830110" duration="3537000" />
+      <workItem from="1666094741427" duration="9265000" />
     </task>
     <servers />
   </component>
