@@ -8,7 +8,7 @@
 #include "InteractableActor.generated.h"
 
 UCLASS()
-class PLUGINSMODULES_API AInteractableActor : public AActor, public IInteractableObject
+class QUESTSYSTEM_API AInteractableActor : public AActor, public IInteractableObject
 {
 	GENERATED_BODY()
 	
@@ -24,7 +24,7 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 	UFUNCTION(BlueprintCallable)
-		void OnInteractionFinished(AActor* InteractInstigator)
+	void OnInteractionFinished(AActor* InteractInstigator)
 	{
 		NotifyInteractionFinished(this,InteractInstigator);
 	}
