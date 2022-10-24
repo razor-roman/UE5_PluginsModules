@@ -16,10 +16,16 @@
     <setting file="file://$PROJECT_DIR$/Plugins/QuestSystem/Source/QuestSystem/Private/LocationMarker.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Plugins/QuestSystem/Source/QuestSystem/Private/Objective.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Plugins/QuestSystem/Source/QuestSystem/Private/Quest.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Plugins/QuestSystem/Source/QuestSystem/Private/QuestListComponent.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Plugins/QuestSystem/Source/QuestSystem/Private/QuestSystemCharacter.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Plugins/QuestSystem/Source/QuestSystem/Private/UI/CurrentObjectives.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Plugins/QuestSystem/Source/QuestSystem/Public/InteractionComponent.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Plugins/QuestSystem/Source/QuestSystem/Public/LocationMarker.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Plugins/QuestSystem/Source/QuestSystem/Public/Objective.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Plugins/QuestSystem/Source/QuestSystem/Public/Quest.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Plugins/QuestSystem/Source/QuestSystem/Public/QuestListComponent.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Plugins/QuestSystem/Source/QuestSystem/Public/QuestSystemCharacter.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Plugins/QuestSystem/Source/QuestSystem/Public/UI/CurrentObjectives.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/PluginsModules/MyMediaPlayer.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/PluginsModules/MyMediaPlayer.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/PluginsModules/MyUserWidget.cpp" root0="FORCE_HIGHLIGHTING" />
@@ -39,6 +45,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.tabs&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -172,7 +179,12 @@
       <workItem from="1666287601937" duration="10480000" />
       <workItem from="1666356326207" duration="3221000" />
       <workItem from="1666360550539" duration="4826000" />
-      <workItem from="1666365471354" duration="8263000" />
+      <workItem from="1666365471354" duration="10272000" />
+      <workItem from="1666446361891" duration="14856000" />
+      <workItem from="1666520904671" duration="8357000" />
+      <workItem from="1666531118628" duration="8009000" />
+      <workItem from="1666551246158" duration="2815000" />
+      <workItem from="1666596951690" duration="5367000" />
     </task>
     <servers />
   </component>

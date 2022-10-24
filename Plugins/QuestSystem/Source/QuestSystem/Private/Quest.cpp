@@ -39,6 +39,11 @@ void AQuest::TakeQuest(AActor* Character)
 {
 	for (int32 i = 0; i < Objectives.Num(); i++)
 	{
+		auto* Objective = Objectives[i];
+		if(Objective==nullptr)
+		{
+			continue;
+		}
 		if (Objectives[i])
 		{
 			Objectives[i]->ActivateObjective(Character);

@@ -22,26 +22,43 @@ protected:
 	virtual void Tick(float DeltaTime) override;
 	UPROPERTY(EditAnywhere)
 	FText Name;
+	
 	UPROPERTY(EditAnywhere)
-	FText Descrition;
+	FText Description;
+	
 	UPROPERTY(EditAnywhere)
 	TArray<UObjective*> Objectives;
+	
 	UPROPERTY(EditAnywhere)
 	bool bIsStoryQuest = true;
+	
 	UPROPERTY(EditAnywhere)
 	bool bKeepObjectivesOrder = true;
+	
 	UPROPERTY(EditAnywhere)
 	AQuest* PrerquisedQuest;
+	
 	UPROPERTY(VisibleAnywhere)
 	bool bIsTaken;
+	
+	UPROPERTY(VisibleAnywhere)
+	bool bIsCompleted;
+	
 public:	
 	// Called every frame	
 	UFUNCTION(BlueprintCallable, CallInEditor)
     void UpdateLocation();
-	
+	FText GetName() {return Name;}
+	FText GetDescription() {return Description;}
+	TArray<UObjective*> GetObjectives() {return Objectives;}
 	void TakeQuest(AActor * Character);
+	//TODO fix delegate
 	//FOnQuestStatusUpdated OnQuestStatusUpdated;
 	void OnObjectiveCompleted(UObjective* Objective);
+	bool IsAlreadyTaken() const {return bIsTaken;}
+	AQuest* GetPrerquisedQuest(){return PrerquisedQuest;}
+	bool IsCompleted(){return bIsCompleted;}
+	bool IsStoryQuest() {return bIsStoryQuest;}
 #if WITH_EDITOR
 	UFUNCTION(BlueprintCallable, CallInEditor)
 	void AddLocationObjective();
