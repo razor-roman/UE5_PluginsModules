@@ -13,10 +13,11 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Plugins/QuestSystem/Source/QuestSystem/Private/InteractionComponent.cpp" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Plugins/QuestSystem/Source/QuestSystem/Private/LocationMarker.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Plugins/QuestSystem/Source/QuestSystem/Private/LocationMarker.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Plugins/QuestSystem/Source/QuestSystem/Private/Objective.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Plugins/QuestSystem/Source/QuestSystem/Private/Quest.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Plugins/QuestSystem/Source/QuestSystem/Private/QuestListComponent.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Plugins/QuestSystem/Source/QuestSystem/Private/QuestSystem.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Plugins/QuestSystem/Source/QuestSystem/Private/QuestSystemCharacter.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Plugins/QuestSystem/Source/QuestSystem/Private/UI/CurrentObjectives.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Plugins/QuestSystem/Source/QuestSystem/Public/InteractionComponent.h" root0="FORCE_HIGHLIGHTING" />
@@ -24,6 +25,7 @@
     <setting file="file://$PROJECT_DIR$/Plugins/QuestSystem/Source/QuestSystem/Public/Objective.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Plugins/QuestSystem/Source/QuestSystem/Public/Quest.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Plugins/QuestSystem/Source/QuestSystem/Public/QuestListComponent.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Plugins/QuestSystem/Source/QuestSystem/Public/QuestSystem.h" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Plugins/QuestSystem/Source/QuestSystem/Public/QuestSystemCharacter.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Plugins/QuestSystem/Source/QuestSystem/Public/UI/CurrentObjectives.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/PluginsModules/MyMediaPlayer.cpp" root0="FORCE_HIGHLIGHTING" />
@@ -45,7 +47,8 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.tabs&quot;,
+    &quot;XThreadsFramesViewSplitterKey&quot;: &quot;0.402746&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;CppUnrealEngineOptionsId&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -184,7 +187,25 @@
       <workItem from="1666520904671" duration="8357000" />
       <workItem from="1666531118628" duration="8009000" />
       <workItem from="1666551246158" duration="2815000" />
-      <workItem from="1666596951690" duration="5367000" />
+      <workItem from="1666596951690" duration="14921000" />
+      <workItem from="1666634053999" duration="4787000" />
+      <workItem from="1666711506287" duration="4129000" />
+      <workItem from="1666772280364" duration="5988000" />
+      <workItem from="1666798825420" duration="12750000" />
+      <workItem from="1666864963930" duration="3648000" />
+      <workItem from="1666902424805" duration="28000" />
+      <workItem from="1666902492507" duration="610000" />
+      <workItem from="1666958821367" duration="11663000" />
+      <workItem from="1667118438088" duration="14348000" />
+      <workItem from="1667314838182" duration="7051000" />
+      <workItem from="1667415390399" duration="854000" />
+      <workItem from="1667420459664" duration="578000" />
+      <workItem from="1667421257691" duration="245000" />
+      <workItem from="1667422230719" duration="660000" />
+      <workItem from="1667422948119" duration="254000" />
+      <workItem from="1667423245442" duration="340000" />
+      <workItem from="1667423611956" duration="70000" />
+      <workItem from="1667423778422" duration="712000" />
     </task>
     <servers />
   </component>
@@ -206,5 +227,20 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/Plugins/QuestSystem/Source/QuestSystem/Private/QuestListComponent.cpp</url>
+          <line>22</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

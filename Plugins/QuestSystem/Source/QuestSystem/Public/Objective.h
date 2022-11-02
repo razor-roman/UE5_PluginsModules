@@ -3,7 +3,6 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "UObject/NoExportTypes.h"
 #include "Objective.generated.h"
 
 UENUM()
@@ -39,12 +38,12 @@ public:
 UCLASS()
 class QUESTSYSTEM_API UInteractionObjective : public UObjective
 {
-GENERATED_BODY()
-public:
-UInteractionObjective();
-void ActivateObjective(AActor * Character) override;
-UPROPERTY(EditAnywhere, meta = (AllowedClasses = "InteractableObject"))
-AActor* Target;
+	GENERATED_BODY()
+	public:
+	UInteractionObjective();
+	virtual void ActivateObjective(AActor * Character) override;
+	UPROPERTY(EditAnywhere, meta = (AllowedClasses = "InteractableObject"))
+	AActor* Target;
 };
 
 UCLASS()
@@ -53,7 +52,7 @@ class QUESTSYSTEM_API ULocationObjective : public UObjective
 	GENERATED_BODY()
 public:
 	ULocationObjective();
-	void ActivateObjective(AActor * Character) override;
+	virtual void ActivateObjective(AActor * Character) override;
 	UPROPERTY(EditAnywhere, meta = (AllowedClasses = "LocationMarker"))
     AActor* Marker;
 };

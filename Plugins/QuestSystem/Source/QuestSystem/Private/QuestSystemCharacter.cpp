@@ -8,16 +8,13 @@
 #include "Blueprint/UserWidget.h"
 #include "Blueprint/WidgetBlueprintLibrary.h"
 #include "Kismet/GameplayStatics.h"
+#include "UI/QuestList.h"
 
 // Sets default values
 AQuestSystemCharacter::AQuestSystemCharacter()
 {
  	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
-	SpringArmComponent = CreateDefaultSubobject<USpringArmComponent>("SpringArm");
-	CameraComponent = CreateDefaultSubobject<UCameraComponent>("Camera");
-	SpringArmComponent->SetupAttachment(GetMesh());
-	CameraComponent->SetupAttachment(GetMesh());
 }
 
 // Called when the game starts or when spawned

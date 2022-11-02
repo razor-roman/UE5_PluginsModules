@@ -65,13 +65,13 @@ void AQuest::OnObjectiveCompleted(UObjective* Objective)
 	    Objectives[ObjectiveIndex + 1]->bCanBeCompleted = true;
 	    }
     }
-    // if (OnQuestStatusUpdated.IsBound())
-    // {
-    // OnQuestStatusUpdated.Broadcast(this);
-    // }
+	 if (OnQuestStatusUpdated.IsBound())
+	 {
+		OnQuestStatusUpdated.Broadcast(this);
+	 }
 
 }
-
+#if WITH_EDITOR
 void AQuest::AddLocationObjective()
 {
 	Objectives.Add(NewObject<ULocationObjective>(this));
@@ -82,3 +82,4 @@ void AQuest::AddInteractObjective()
 	Objectives.Add(NewObject<UInteractionObjective>(this));
 }
 
+#endif

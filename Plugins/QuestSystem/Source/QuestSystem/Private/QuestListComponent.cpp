@@ -4,6 +4,9 @@
 #include "QuestListComponent.h"
 #include "UI/CurrentObjectives.h"
 #include "Blueprint/UserWidget.h"
+#include "Blueprint/WidgetBlueprintLibrary.h"
+#include "Kismet/GameplayStatics.h"
+#include "UI/QuestList.h"
 
 // Sets default values for this component's properties
 UQuestListComponent::UQuestListComponent()
@@ -25,8 +28,7 @@ void UQuestListComponent::AddQuest(AQuest* Quest)
 	if (Quest)
     {
 	   AcceptedQuests.AddUnique(Quest);
-	   Quest->TakeQuest(GetOwner());
-			//TODO fix it
+	   Quest->TakeQuest(GetOwner());		
 	   OnActiveQuestChanged.AddLambda([this](AQuest * Quest)
 	   {
 	    if (ActiveQuest == Quest)
@@ -62,15 +64,39 @@ void UQuestListComponent::BeginPlay()
 	// ...
 	if (CurrentObjectivesWidgetClass)
 	{
-		UCurrentObjectives * CurrentObjectivesWidget = 
-		CreateWidget<UCurrentObjectives>(GetWorld(),
+		UCurrentObjectives * CurrentObjectivesWidget = CreateWidget<UCurrentObjectives>(GetWorld(),
 		CurrentObjectivesWidgetClass);
 		
-		OnActiveQuestChanged.AddUObject(CurrentObjectivesWidget,
-		&UCurrentObjectives::SetCurrentObjectives);
+		OnActiveQuestChanged.AddUObject(CurrentObjectivesWidget,&UCurrentObjectives::SetCurrentObjectives);
 		CurrentObjectivesWidget->AddToViewport();
 	}
+	
 }
+
+void UQuestListComponent::ToggleQuestListVisibility()
+{
+	APlayerController * PC = UGameplayStatics::GetPlayerController(GetWorld(), 0);
+	if (QuestList)
+	{
+		QuestList->RemoveFromParent();
+		QuestList = nullptr;
+		UWidgetBlueprintLibrary::SetInputMode_GameOnly(PC);
+		PC->bShowMouseCursor = false;
+	}
+	else
+	{
+		if (QuestListClass)
+		{
+			QuestList = CreateWidget<UQuestList>(GetWorld(), QuestListClass);
+			QuestList->Init(this);
+			QuestList->AddToViewport();
+			UWidgetBlueprintLibrary::SetInputMode_GameAndUIEx(PC);
+			PC->bShowMouseCursor = true;
+		}
+
+	}
+}
+
 
 
 // Called every frame

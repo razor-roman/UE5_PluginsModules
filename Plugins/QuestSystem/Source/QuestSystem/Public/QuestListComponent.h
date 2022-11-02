@@ -7,7 +7,9 @@
 #include "Components/ActorComponent.h"
 #include "QuestListComponent.generated.h"
 
+DECLARE_MULTICAST_DELEGATE_OneParam(FOnQuestAction, AQuest*);
 
+class UQuestList;
 class UCurrentObjectives;
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
 class QUESTSYSTEM_API UQuestListComponent : public UActorComponent
@@ -21,13 +23,14 @@ public:
 public:	
 	// Sets default values for this component's properties
 	UQuestListComponent();
+	UFUNCTION()
 	void AddQuest(AQuest* Quest);
 	const TArray<AQuest*>& GetQuests() const {return AcceptedQuests;};
 
 	AQuest* GetActiveQuest() const {return ActiveQuest;}
 	void SetActiveQuest(AQuest* Quest);
 	
-	DECLARE_MULTICAST_DELEGATE_OneParam(FOnQuestAction, AQuest*);
+	
 	FOnQuestAction OnActiveQuestChanged;
 private:
 	// Called when the game starts
@@ -37,10 +40,15 @@ private:
 	TArray<AQuest*> AcceptedQuests;
 	UPROPERTY()
 	AQuest* ActiveQuest;
-	//Todo fix it
 	UPROPERTY(EditAnywhere)
 	TSubclassOf<UCurrentObjectives> CurrentObjectivesWidgetClass;
 	
-
-		
+	UFUNCTION(BlueprintCallable)
+	void ToggleQuestListVisibility();
+	
+	UPROPERTY()
+	UQuestList * QuestList;
+	
+	UPROPERTY(EditAnywhere)
+	TSubclassOf<UQuestList> QuestListClass;
 };

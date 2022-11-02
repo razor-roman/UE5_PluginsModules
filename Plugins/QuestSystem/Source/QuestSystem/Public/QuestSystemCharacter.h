@@ -12,7 +12,7 @@
 class UQuestList;
 class UQuestDialog;
 UCLASS()
-class QUESTSYSTEM_API AQuestSystemCharacter : public ACharacter, public  IInteractableObject
+class QUESTSYSTEM_API AQuestSystemCharacter : public ACharacter, public IInteractableObject
 {
 	GENERATED_BODY()
 
@@ -23,10 +23,6 @@ public:
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
-	UPROPERTY(EditAnywhere)
-	USpringArmComponent* SpringArmComponent;
-	UPROPERTY(EditAnywhere)
-	UCameraComponent* CameraComponent;
 	
 
 public:	
@@ -37,7 +33,7 @@ public:
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
 	void Interact_Implementation(AActor* ActorInteractedWithObject) override;
-	
+		
 	UPROPERTY(EditAnywhere)
 	TSubclassOf<UQuestDialog> QuestDialogClass;
 		

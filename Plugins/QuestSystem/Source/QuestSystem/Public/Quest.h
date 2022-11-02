@@ -3,11 +3,14 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "Objective.h"
 #include "GameFramework/Actor.h"
 #include "Quest.generated.h"
 
+DECLARE_MULTICAST_DELEGATE_OneParam(FOnQuestStatusUpdated, AQuest*/*Quest*/);
 class UObjective;
 UCLASS()
+
 class QUESTSYSTEM_API AQuest : public AActor
 {
 	GENERATED_BODY()
@@ -53,12 +56,13 @@ public:
 	TArray<UObjective*> GetObjectives() {return Objectives;}
 	void TakeQuest(AActor * Character);
 	//TODO fix delegate
-	//FOnQuestStatusUpdated OnQuestStatusUpdated;
+	FOnQuestStatusUpdated OnQuestStatusUpdated;
 	void OnObjectiveCompleted(UObjective* Objective);
 	bool IsAlreadyTaken() const {return bIsTaken;}
 	AQuest* GetPrerquisedQuest(){return PrerquisedQuest;}
 	bool IsCompleted(){return bIsCompleted;}
 	bool IsStoryQuest() {return bIsStoryQuest;}
+
 #if WITH_EDITOR
 	UFUNCTION(BlueprintCallable, CallInEditor)
 	void AddLocationObjective();

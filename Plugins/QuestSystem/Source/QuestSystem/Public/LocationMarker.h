@@ -16,8 +16,7 @@ class ULocationMarker : public UInterface
 /**
  * 
  */
-DECLARE_MULTICAST_DELEGATE_TwoParams(FOnLocationReached, AActor* /*LocationMarker*/,
-AActor* /*OverlappedActor*/);
+DECLARE_MULTICAST_DELEGATE_TwoParams(FOnLocationReached, AActor* /*LocationMarker*/, AActor* /*OverlappedActor*/);
 class QUESTSYSTEM_API ILocationMarker
 {
 	GENERATED_BODY()
