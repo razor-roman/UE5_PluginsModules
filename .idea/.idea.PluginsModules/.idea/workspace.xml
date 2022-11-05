@@ -206,6 +206,8 @@
       <workItem from="1667423245442" duration="340000" />
       <workItem from="1667423611956" duration="70000" />
       <workItem from="1667423778422" duration="712000" />
+      <workItem from="1667656508927" duration="2003000" />
+      <workItem from="1667658707021" duration="11418000" />
     </task>
     <servers />
   </component>
@@ -235,6 +237,11 @@
           <url>file://$PROJECT_DIR$/Plugins/QuestSystem/Source/QuestSystem/Private/QuestListComponent.cpp</url>
           <line>22</line>
           <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/Plugins/StandaloneWindowQuest/Source/StandaloneWindowQuest/Private/StandaloneWindowQuest.cpp</url>
+          <line>111</line>
+          <option name="timeStamp" value="23" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -94,8 +94,7 @@ TSharedRef<SDockTab> FStandaloneWindowModule::OnSpawnPluginTab(const FSpawnTabAr
 			.VAlign(VAlign_Center)
 			[
 				// SNew(STextBlock)
-				// .Text(WidgetText)
-			
+				// .Text(WidgetText)			
 			SNew(SButton)
 			.OnClicked_Lambda([]()
 				{
@@ -112,12 +111,12 @@ TSharedRef<SDockTab> FStandaloneWindowModule::OnSpawnPluginTab(const FSpawnTabAr
                     }
                     return FReply::Handled();
                 })
-            [
-	            SNew(STextBlock)
-	            .Text(WidgetText)
-            ]
-        ]
-    ];
+	            [
+		            SNew(STextBlock)
+		            .Text(WidgetText)
+	            ]
+			]
+		];
 }
 
 

@@ -3,15 +3,15 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "Modules/ModuleManager.h"
 
+class AQuest;
 class FToolBarBuilder;
 class FMenuBuilder;
 
 class FStandaloneWindowQuestModule : public IModuleInterface
 {
 public:
-
+	
 	/** IModuleInterface implementation */
 	virtual void StartupModule() override;
 	virtual void ShutdownModule() override;
@@ -20,10 +20,9 @@ public:
 	void PluginButtonClicked();
 	
 private:
-
 	void RegisterMenus();
-
-	TSharedRef<class SDockTab> OnSpawnPluginTab(const class FSpawnTabArgs& SpawnTabArgs);
+	FText MyText;
+	TSharedRef<class SDockTab> OnSpawnPluginTab(const class FSpawnTabArgs& SpawnTabArgs);	
 
 private:
 	TSharedPtr<class FUICommandList> PluginCommands;

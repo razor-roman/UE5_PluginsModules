@@ -42,7 +42,7 @@ public class StandaloneWindowQuest : ModuleRules
 				"CoreUObject",
 				"Engine",
 				"Slate",
-				"SlateCore",
+				"SlateCore", "QuestSystem", "QuestSystem",
 				// ... add private dependencies that you statically link with here ...	
 			}
 			);
