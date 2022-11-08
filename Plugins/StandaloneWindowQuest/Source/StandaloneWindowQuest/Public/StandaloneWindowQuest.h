@@ -21,9 +21,9 @@ public:
 	
 private:
 	void RegisterMenus();
-	FText MyText;
-	TSharedRef<class SDockTab> OnSpawnPluginTab(const class FSpawnTabArgs& SpawnTabArgs);	
-
+	TSharedRef<class SDockTab> OnSpawnPluginTab(const class FSpawnTabArgs& SpawnTabArgs);
+	TSharedPtr<SVerticalBox> Container = SNew(SVerticalBox);
+	TArray<AQuest*> QuestActors;
 private:
 	TSharedPtr<class FUICommandList> PluginCommands;
 };

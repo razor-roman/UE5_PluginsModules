@@ -53,57 +53,77 @@ void FStandaloneWindowQuestModule::ShutdownModule()
 	FStandaloneWindowQuestCommands::Unregister();
 
 	FGlobalTabmanager::Get()->UnregisterNomadTabSpawner(StandaloneWindowQuestTabName);
+	
 }
 
 TSharedRef<SDockTab> FStandaloneWindowQuestModule::OnSpawnPluginTab(const FSpawnTabArgs& SpawnTabArgs)
 {
+	Container->ClearChildren();
 	FText WidgetText = FText::FromString("Widget Text");
-	MyText = FText::FromString("Choose Quest Actor");
 	return SNew(SDockTab)
 		.TabRole(ETabRole::NomadTab)
-		[	// Put your tab content here!		
+		[	// Put your tab content here!
+			
 		SNew(SVerticalBox)		
 			+SVerticalBox::Slot().HAlign(HAlign_Center).VAlign(VAlign_Top)
-			[
+			[			
 			SNew(SButton)
 			.OnClicked_Lambda([this]()
 			{
+				Container->ClearChildren();
+				QuestActors.Empty();
 				if (GEditor)
 				{
+					USelection* SelectedActors = GEditor->GetSelectedActors();
 					for (FSelectionIterator Iter((GEditor->GetSelectedActorIterator())); Iter; ++Iter)
 					{
 						if(AQuest* QuestActor = Cast<AQuest>(*Iter))
-							{
-							MyText=FText::FromString("TEXT");	
-							}
-						}
+						{
+							QuestActors.Add(QuestActor);
+							Container->AddSlot()
+							[								
+								SNew(SVerticalBox)
+									+SVerticalBox::Slot()
+									[
+									SNew(SHorizontalBox)
+									+SHorizontalBox::Slot()
+									[								
+									 SNew(SEditableText).Text(QuestActor->GetName())
+									 .OnTextChanged_Lambda([QuestActor](const FText& InText)
+									 {
+									 	QuestActor->SetName(InText);
+									 })
+									 ]
+									+SHorizontalBox::Slot()
+									[
+									 SNew(SEditableText).Text(QuestActor->GetDescription())
+									 .OnTextChanged_Lambda([QuestActor](const FText& InText)
+									 {
+										 QuestActor->SetDescription(InText);
+									 })
+									]
+									]								
+							];							
+							QuestActors.Add(QuestActor);
+						}						
 					}
+					SelectedActors->DeselectAll();
+					for(AQuest* Actor : QuestActors)
+					{
+						SelectedActors->Select(Actor);
+					}
+					
+				}
 					return FReply::Handled();
-				})
+			})
 				[
-					SNew(STextBlock)
-					.Text(WidgetText)
+					SNew(STextBlock).Text(FText::FromString("Quest Button"))
 				]
-			]
+			]			
 			+ SVerticalBox::Slot()
-			.HAlign(HAlign_Fill)
-			.VAlign(VAlign_Top)
 			[
-			SNew(SHorizontalBox)
-				+SHorizontalBox::Slot().HAlign(HAlign_Left)
-				[
-					SNew(STextBlock).Text_Lambda([this]()->FText {return MyText; })
-				]
-				+SHorizontalBox::Slot().HAlign(HAlign_Center)
-				[
-					SNew(STextBlock).Text(MyText)
-				]
-				+SHorizontalBox::Slot().HAlign(HAlign_Right)
-				[
-					SNew(STextBlock).Text(MyText)
-				]
-			]
-			
+				Container.ToSharedRef()							
+			]			
 		];
 }
 
@@ -111,6 +131,7 @@ void FStandaloneWindowQuestModule::PluginButtonClicked()
 {
 	FGlobalTabmanager::Get()->TryInvokeTab(StandaloneWindowQuestTabName);
 }
+
 
 void FStandaloneWindowQuestModule::RegisterMenus()
 {

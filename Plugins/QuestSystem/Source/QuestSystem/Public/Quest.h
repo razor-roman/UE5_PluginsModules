@@ -53,6 +53,8 @@ public:
     void UpdateLocation();
 	FText GetName() {return Name;}
 	FText GetDescription() {return Description;}
+	void SetDescription(FText Text) {Description=Text;}
+	void SetName(FText Text) {Name=Text;}
 	TArray<UObjective*> GetObjectives() {return Objectives;}
 	void TakeQuest(AActor * Character);
 	//TODO fix delegate
