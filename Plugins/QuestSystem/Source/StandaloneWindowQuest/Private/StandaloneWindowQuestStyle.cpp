@@ -39,7 +39,7 @@ const FVector2D Icon20x20(20.0f, 20.0f);
 TSharedRef< FSlateStyleSet > FStandaloneWindowQuestStyle::Create()
 {
 	TSharedRef< FSlateStyleSet > Style = MakeShareable(new FSlateStyleSet("StandaloneWindowQuestStyle"));
-	Style->SetContentRoot(IPluginManager::Get().FindPlugin("StandaloneWindowQuest")->GetBaseDir() / TEXT("Resources"));
+	Style->SetContentRoot(IPluginManager::Get().FindPlugin("QuestSystem")->GetBaseDir() / TEXT("Resources"));
 
 	Style->Set("StandaloneWindowQuest.OpenPluginWindow", new IMAGE_BRUSH_SVG(TEXT("PlaceholderButtonIcon"), Icon20x20));
 
