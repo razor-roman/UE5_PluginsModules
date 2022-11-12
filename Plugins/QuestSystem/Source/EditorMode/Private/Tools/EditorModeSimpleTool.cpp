@@ -4,6 +4,7 @@
 #include "InteractiveToolManager.h"
 #include "ToolBuilderUtil.h"
 #include "CollisionQueryParams.h"
+#include "Quest.h"
 #include "Engine/World.h"
 
 // localization namespace
@@ -12,6 +13,8 @@
 /*
  * ToolBuilder implementation
  */
+
+class AQuest;
 
 UInteractiveTool* UEditorModeSimpleToolBuilder::BuildTool(const FToolBuilderState& SceneState) const
 {
@@ -68,26 +71,43 @@ void UEditorModeSimpleTool::OnClicked(const FInputDeviceRay& ClickPos)
 	FHitResult Result;
 	if (TargetWorld->LineTraceSingleByObjectType(Result, RayStart, RayEnd, QueryParams))
 	{
-		if (AActor* ClickedActor = Result.GetActor())
-		{
-			FText ActorInfoMsg;
+		ClickedActor = Result.GetActor();
+		// if (AActor* ClickedActor = Result.GetActor())
+		// {
+		// 	FText ActorInfoMsg;
+		//
+		// 	if (Properties->ShowExtendedInfo)
+		// 	{
+		// 		ActorInfoMsg = FText::Format(LOCTEXT("ExtendedActorInfo", "Name: {0}\nClass: {1}"), 
+		// 			FText::FromString(ClickedActor->GetName()), 
+		// 			FText::FromString(ClickedActor->GetClass()->GetName())
+		// 		);
+		// 	}
+		// 	else
+		// 	{
+		// 		ActorInfoMsg = FText::Format(LOCTEXT("BasicActorInfo", "Name: {0}"), FText::FromString(Result.GetActor()->GetName()));
+		// 	}
+		//
+		// 	FText Title = LOCTEXT("ActorInfoDialogTitle", "Actor Info");
+		// 	// JAH TODO: consider if we can highlight the actor prior to opening the dialog box or make it non-modal
+		// 	FMessageDialog::Open(EAppMsgType::Ok, ActorInfoMsg, &Title);
+		// }
+	}
+}
 
-			if (Properties->ShowExtendedInfo)
-			{
-				ActorInfoMsg = FText::Format(LOCTEXT("ExtendedActorInfo", "Name: {0}\nClass: {1}"), 
-					FText::FromString(ClickedActor->GetName()), 
-					FText::FromString(ClickedActor->GetClass()->GetName())
-				);
-			}
-			else
-			{
-				ActorInfoMsg = FText::Format(LOCTEXT("BasicActorInfo", "Name: {0}"), FText::FromString(Result.GetActor()->GetName()));
-			}
-
-			FText Title = LOCTEXT("ActorInfoDialogTitle", "Actor Info");
-			// JAH TODO: consider if we can highlight the actor prior to opening the dialog box or make it non-modal
-			FMessageDialog::Open(EAppMsgType::Ok, ActorInfoMsg, &Title);
-		}
+void UEditorModeSimpleTool::Render(IToolsContextRenderAPI* RenderAPI)
+{
+	Super::Render(RenderAPI);
+	FPrimitiveDrawInterface* PDI = RenderAPI->GetPrimitiveDrawInterface();
+	Super::Render(RenderAPI);
+	if(ClickedActor)
+	{
+		DrawWireBox(PDI,ClickedActor->GetComponentsBoundingBox(true),FColor::Yellow,1);
+	}
+	if(AQuest* QuestActor = Cast<AQuest>(ClickedActor))
+	{
+		TArray<UObjective*> Objectives = QuestActor->GetObjectives();
+		for ()
 	}
 }
 

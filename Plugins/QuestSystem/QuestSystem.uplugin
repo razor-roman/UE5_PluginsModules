@@ -24,6 +24,11 @@
 			"Name": "StandaloneWindowQuest",
 			"Type": "Editor",
 			"LoadingPhase": "Default"
+		},
+		{
+			"Name": "EditorMode",
+			"Type": "Editor",
+			"LoadingPhase": "Default"
 		}
 	]
 }

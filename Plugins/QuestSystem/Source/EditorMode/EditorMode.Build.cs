@@ -44,7 +44,8 @@ public class EditorMode : ModuleRules
 				"UnrealEd",
 				"LevelEditor",
 				"InteractiveToolsFramework",
-				"EditorInteractiveToolsFramework"
+				"EditorInteractiveToolsFramework",
+				"QuestSystem"
 				// ... add private dependencies that you statically link with here ...	
 			}
 			);

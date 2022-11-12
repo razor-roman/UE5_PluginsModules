@@ -59,12 +59,13 @@ public:
 	virtual void Setup() override;
 
 	virtual void OnClicked(const FInputDeviceRay& ClickPos);
-
+	
+	virtual void Render(IToolsContextRenderAPI* RenderAPI) override;
 
 protected:
 	UPROPERTY()
 	TObjectPtr<UEditorModeSimpleToolProperties> Properties;
-
+	AActor* ClickedActor;
 
 protected:
 	/** target World we will raycast into to find actors */
