@@ -63,10 +63,8 @@ void UEditorModeEditorMode::Enter()
 	//////////////////////////////////////////////////////////////////////////
 	////////////////////////////////////////////////////////////////////////// 
 	const FEditorModeEditorModeCommands& SampleToolCommands = FEditorModeEditorModeCommands::Get();
-
 	RegisterTool(SampleToolCommands.SimpleTool, SimpleToolName, NewObject<UEditorModeSimpleToolBuilder>(this));
 	RegisterTool(SampleToolCommands.InteractiveTool, InteractiveToolName, NewObject<UEditorModeInteractiveToolBuilder>(this));
-
 	// active tool type is not relevant here, we just set to default
 	GetToolManager()->SelectActiveToolType(EToolSide::Left, SimpleToolName);
 	if(!Toolkit.IsValid() && UsesToolkits())

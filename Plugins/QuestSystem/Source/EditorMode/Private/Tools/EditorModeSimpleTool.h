@@ -59,7 +59,7 @@ public:
 	virtual void Setup() override;
 
 	virtual void OnClicked(const FInputDeviceRay& ClickPos);
-	
+	virtual bool IsSelectedInEditor() const override;	
 	virtual void Render(IToolsContextRenderAPI* RenderAPI) override;
 
 protected:

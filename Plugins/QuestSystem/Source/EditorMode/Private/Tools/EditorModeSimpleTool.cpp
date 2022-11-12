@@ -5,6 +5,7 @@
 #include "ToolBuilderUtil.h"
 #include "CollisionQueryParams.h"
 #include "Quest.h"
+#include "QuestSystemCharacter.h"
 #include "Engine/World.h"
 
 // localization namespace
@@ -95,19 +96,42 @@ void UEditorModeSimpleTool::OnClicked(const FInputDeviceRay& ClickPos)
 	}
 }
 
+bool UEditorModeSimpleTool::IsSelectedInEditor() const
+{
+	return Super::IsSelectedInEditor();
+}
+
 void UEditorModeSimpleTool::Render(IToolsContextRenderAPI* RenderAPI)
 {
 	Super::Render(RenderAPI);
 	FPrimitiveDrawInterface* PDI = RenderAPI->GetPrimitiveDrawInterface();
 	Super::Render(RenderAPI);
-	if(ClickedActor)
+	USelection* ActorsSelection = GEditor->GetSelectedActors();
+   	if(ClickedActor)
 	{
 		DrawWireBox(PDI,ClickedActor->GetComponentsBoundingBox(true),FColor::Yellow,1);
 	}
-	if(AQuest* QuestActor = Cast<AQuest>(ClickedActor))
+	if(AQuestSystemCharacter* QuestSystemCharacter = Cast<AQuestSystemCharacter>(ClickedActor))
 	{
-		TArray<UObjective*> Objectives = QuestActor->GetObjectives();
-		for ()
+		TArray<AActor*> AttachedActors;
+		QuestSystemCharacter->GetAttachedActors(AttachedActors);
+		for(auto AttachedActor : AttachedActors)
+		{
+			if(AQuest* QuestActor = Cast<AQuest>(AttachedActor))
+			{
+				TArray<UObjective*> Objectives = QuestActor->GetObjectives();
+				if(Objectives.Num()==0) return;
+				for(auto Objective : Objectives)
+				{
+					if(!Objective) continue;
+					if(Objective->GetActor() && Objective)
+					{
+						DrawWireBox(PDI,Objective->GetActor()->GetComponentsBoundingBox(true),FColor::Red,1);
+					}
+				}
+			}
+		}
+		
 	}
 }
 

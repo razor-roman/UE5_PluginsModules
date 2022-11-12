@@ -33,6 +33,7 @@ public:
 	virtual void Exit() override;
 	virtual void ActorSelectionChangeNotify() override;
 	virtual void CreateToolkit() override;
+	
 	virtual bool UsesToolkits() const override;
 	virtual TMap<FName, TArray<TSharedPtr<FUICommandInfo>>> GetModeCommands() const override;
 	TArray<AActor*> GetSelectedActors() {return SelectedActors;}
