@@ -12,6 +12,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Plugins/QuestSystem/Intermediate/Build/Win64/UnrealEditor/Inc/QuestSystem/Objective.generated.h" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Plugins/QuestSystem/Source/QuestSystem/Private/InteractionComponent.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Plugins/QuestSystem/Source/QuestSystem/Private/LocationMarker.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Plugins/QuestSystem/Source/QuestSystem/Private/Objective.cpp" root0="FORCE_HIGHLIGHTING" />

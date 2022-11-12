@@ -33,6 +33,7 @@ public:
 	bool bIsCompleted;
 	UPROPERTY(VisibleAnywhere)
 	bool bCanBeCompleted;
+	virtual FVector GetCurrentLocation(){return FVector::ZeroVector;}
 };
 
 UCLASS()
@@ -44,6 +45,7 @@ class QUESTSYSTEM_API UInteractionObjective : public UObjective
 	virtual void ActivateObjective(AActor * Character) override;
 	UPROPERTY(EditAnywhere, meta = (AllowedClasses = "InteractableObject"))
 	AActor* Target;
+	virtual FVector GetCurrentLocation() override{return Target->GetActorLocation();}
 };
 
 UCLASS()
@@ -55,4 +57,5 @@ public:
 	virtual void ActivateObjective(AActor * Character) override;
 	UPROPERTY(EditAnywhere, meta = (AllowedClasses = "LocationMarker"))
     AActor* Marker;
+	virtual FVector GetCurrentLocation() override{return Marker->GetActorLocation();};
 };
