@@ -74,7 +74,6 @@ public:
 	// these are not used in this Tool
 	virtual void OnClickRelease(const FInputDeviceRay& ReleasePos) override {}
 	virtual void OnTerminateDragSequence() override {}
-
 	/** IModifierToggleBehaviorTarget implementation (inherited via IClickDragBehaviorTarget) */
 	virtual void OnUpdateModifierState(int ModifierID, bool bIsOn) override;
 

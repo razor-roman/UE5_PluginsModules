@@ -23,6 +23,7 @@ void FEditorModeEditorModeCommands::RegisterCommands()
 
 	UI_COMMAND(InteractiveTool, "Measure Distance", "Measures distance between 2 points (click to set origin, shift-click to set end point)", EUserInterfaceActionType::ToggleButton, FInputChord());
 	ToolCommands.Add(InteractiveTool);
+	
 }
 
 TMap<FName, TArray<TSharedPtr<FUICommandInfo>>> FEditorModeEditorModeCommands::GetCommands()

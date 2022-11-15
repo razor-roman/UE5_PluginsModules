@@ -17,6 +17,7 @@ class EDITORMODE_API UEditorModeSimpleToolBuilder : public UInteractiveToolBuild
 	GENERATED_BODY()
 
 public:
+	
 	virtual bool CanBuildTool(const FToolBuilderState& SceneState) const override { return true; }
 	virtual UInteractiveTool* BuildTool(const FToolBuilderState& SceneState) const override;
 };
@@ -33,7 +34,7 @@ class EDITORMODE_API UEditorModeSimpleToolProperties : public UInteractiveToolPr
 	GENERATED_BODY()
 public:
 	UEditorModeSimpleToolProperties();
-
+	
 	/** If enabled, dialog should display extended information about the actor clicked on. Otherwise, only basic info will be shown. */
 	UPROPERTY(EditAnywhere, Category = Options, meta = (DisplayName = "Show Extended Info"))
 	bool ShowExtendedInfo;
@@ -57,11 +58,11 @@ public:
 	virtual void SetWorld(UWorld* World);
 
 	virtual void Setup() override;
-
+	
 	virtual void OnClicked(const FInputDeviceRay& ClickPos);
 	virtual bool IsSelectedInEditor() const override;	
 	virtual void Render(IToolsContextRenderAPI* RenderAPI) override;
-
+	
 protected:
 	UPROPERTY()
 	TObjectPtr<UEditorModeSimpleToolProperties> Properties;

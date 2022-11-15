@@ -107,6 +107,7 @@ void UEditorModeSimpleTool::Render(IToolsContextRenderAPI* RenderAPI)
 	FPrimitiveDrawInterface* PDI = RenderAPI->GetPrimitiveDrawInterface();
 	Super::Render(RenderAPI);
 	USelection* ActorsSelection = GEditor->GetSelectedActors();
+	
    	if(ClickedActor)
 	{
 		DrawWireBox(PDI,ClickedActor->GetComponentsBoundingBox(true),FColor::Yellow,1);
