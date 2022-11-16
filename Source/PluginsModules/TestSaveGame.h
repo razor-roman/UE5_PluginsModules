@@ -18,4 +18,5 @@ public:
     float TestFloat;
 	UPROPERTY(BlueprintReadWrite)
 	FTransform CharacterTransform;
+	
 };

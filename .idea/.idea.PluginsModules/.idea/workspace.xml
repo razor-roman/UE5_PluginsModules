@@ -35,6 +35,7 @@
     <setting file="file://$PROJECT_DIR$/Source/PluginsModules/MyUserWidget.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/PluginsModules/MyUserWidget.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.33.31629/include/sal.h" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../UE_5.0/Engine/Source/Runtime/Engine/Private/UnrealEngine.cpp" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -223,7 +224,8 @@
       <workItem from="1668338425615" duration="9364000" />
       <workItem from="1668427838102" duration="9477000" />
       <workItem from="1668496202226" duration="5423000" />
-      <workItem from="1668502457231" duration="3591000" />
+      <workItem from="1668502457231" duration="9379000" />
+      <workItem from="1668601205490" duration="16456000" />
     </task>
     <servers />
   </component>

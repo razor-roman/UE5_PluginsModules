@@ -15,14 +15,14 @@ UCLASS()
 class PLUGINSMODULES_API USavingsManager : public UObject
 {
 	GENERATED_BODY()
-	
+public:	
 	UFUNCTION(BlueprintCallable)
 	bool DoesSaveGameExist(const FString& SlotName);
 	UFUNCTION(BlueprintCallable)
 	void LoadGame(const FString& SlotName);
 	UFUNCTION(BlueprintCallable)
 	void SaveCurrentGame(const FString& SlotName);
-public:
+	UTestSaveGame* GetCurrentGameObject() const {return CurrentGameObject;}
 	UPROPERTY(BlueprintReadWrite, BlueprintAssignable)
 	FOnGameFromSlotAction OnGameLoadedFromSlot;
 	UPROPERTY(BlueprintReadWrite, BlueprintAssignable)
@@ -34,4 +34,12 @@ protected:
 	void OnGameSavedToSlotHandle(const FString& SlotName, const int32 UserIndex,bool bSuccess);
 public:
 	void Init();
+	
+public:
+	UFUNCTION(BlueprintCallable)
+	const TArray<FString>& GetExistingSavedSlots() const;
+protected:
+	TArray<FString> ExistingSavedSlots;
+	const FString ExistingSavedSlotsFilePath = "existing_slots.txt";
+	void CacheExistingSavedSlotsInfo();
 };
