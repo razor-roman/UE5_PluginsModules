@@ -18,5 +18,6 @@ public:
     float TestFloat;
 	UPROPERTY(BlueprintReadWrite)
 	FTransform CharacterTransform;
-	
+	void OnFileLoad(UWorld* ThisWorld);
+	void OnFileSave(UWorld* ThisWorld);
 };

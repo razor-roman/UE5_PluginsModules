@@ -4,9 +4,6 @@
 #include "SaveWidget.h"
 
 #include "MyGameInstance.h"
-#include "TestSaveGame.h"
-#include "GameFramework/Character.h"
-#include "Kismet/GameplayStatics.h"
 #include "Kismet/KismetMathLibrary.h"
 
 void USaveWidget::NativeConstruct()
@@ -29,11 +26,9 @@ void USaveWidget::NativeDestruct()
 void USaveWidget::OnSaveButtonPressed()
 {
 	if(!EditableText->GetText().ToString().IsEmpty())
-	{
-		ACharacter* Character = UGameplayStatics::GetPlayerCharacter(GetWorld(),0);		
-		UTestSaveGame* SaveGame  = MyGameInstance->SaveManager->GetCurrentGameObject();
-		SaveGame->CharacterTransform = Character->GetActorTransform();
-		MyGameInstance->SaveManager->SaveCurrentGame(EditableText->GetText().ToString());	
+	{		
+		MyGameInstance->SaveManager->SaveCurrentGame(EditableText->GetText().ToString());
+		MyGameInstance->SaveManager->ExportSaveGameToJsonFile(EditableText->GetText().ToString(),0);
 	}
 	
 }
@@ -42,10 +37,8 @@ void USaveWidget::OnLoadButtonPressed()
 {
 	if(!EditableText->GetText().ToString().IsEmpty())
 	{
+		MyGameInstance->SaveManager->ImportSaveGameFromJsonFile(EditableText->GetText().ToString(),0);
 		MyGameInstance->SaveManager->LoadGame(EditableText->GetText().ToString());
-		ACharacter* Character = UGameplayStatics::GetPlayerCharacter(GetWorld(),0);		
-		UTestSaveGame* SaveGame  = MyGameInstance->SaveManager->GetCurrentGameObject();
-		Character->SetActorTransform(SaveGame->CharacterTransform);
 	}
 	
 }

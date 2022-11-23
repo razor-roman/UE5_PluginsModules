@@ -10,5 +10,6 @@ public class PluginsModulesTarget : TargetRules
 		Type = TargetType.Game;
 		DefaultBuildSettings = BuildSettingsVersion.V2;
 		ExtraModuleNames.Add("PluginsModules");
+		
 	}
 }

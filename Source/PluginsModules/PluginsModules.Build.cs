@@ -9,6 +9,6 @@ public class PluginsModules : ModuleRules
 		PrivateDependencyModuleNames.AddRange(new string[] { "MediaAssets" });
 		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
 
-		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore", "HeadMountedDisplay","Slate","DesktopPlatform","UMG" });
+		PublicDependencyModuleNames.AddRange(new string[] { "JsonUtilities","Json","Core", "CoreUObject", "Engine", "InputCore", "HeadMountedDisplay","Slate","DesktopPlatform","UMG","SlateCore" });
 	}
 }

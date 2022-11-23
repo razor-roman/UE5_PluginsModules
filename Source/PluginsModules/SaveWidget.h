@@ -13,6 +13,7 @@ class USavingsManager;
 /**
  * 
  */
+
 UCLASS()
 class PLUGINSMODULES_API USaveWidget : public UUserWidget
 {
@@ -40,4 +41,6 @@ class PLUGINSMODULES_API USaveWidget : public UUserWidget
 	UPROPERTY()
 	UMyGameInstance* MyGameInstance;
 	FOnGameFromSlotAction OnGameFromSlotAction;
+	
+	
 };
